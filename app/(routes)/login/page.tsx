@@ -16,7 +16,7 @@ export default function Login() {
       const result = await supabase.auth.signInWithOtp({
         email,
         options: {
-          emailRedirectTo: process.env.NEXT_PUBLIC_REDIRECT_URL, // 👈 AÑADIDO
+          emailRedirectTo: 'https://chipper-lollipop-cccd44.netlify.app'
         },
       });
       console.log(result);
