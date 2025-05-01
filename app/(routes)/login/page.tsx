@@ -15,6 +15,9 @@ export default function Login() {
     try {
       const result = await supabase.auth.signInWithOtp({
         email,
+        options: {
+          emailRedirectTo: process.env.NEXT_PUBLIC_REDIRECT_URL, // 👈 AÑADIDO
+        },
       });
       console.log(result);
     } catch (error) {
